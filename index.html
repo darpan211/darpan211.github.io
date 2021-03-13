@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Templete</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css"
+			href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+			<!-- jQuery library -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+			<!-- Popper JS -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+			<!-- Latest compiled JavaScript -->
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+			<style type="text/css">
+			@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Quicksand:wght@600&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Russo+One&family=Raleway&family=Poppins&display=swap');
+			:root{
+				--font:'Quicksand', sans-serif;
+				--title:'Fredoka One', cursive;
+				--heading:'Russo One', cursive;
+				--p:'Raleway', cursive;
+				--bg-color: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+				--bg:white;
+			--primary-color: tomato;
+			}
+			*{
+				scroll-behavior: smooth !important;
+			}
+			p{
+				font-family: var(--font);
+			}
+			.carousel-inner img {
+				width: 100%;
+				height: auto;
+			}
+			a{
+				color: black !important;
+				font-family: var(--font);
+				font-weight: bold;
+			}
+			a:hover{
+				color: white !important;
+			}
+			.icon{
+				color: springgreen;
+			}
+			li.test:hover{
+				background-color: var(--primary-color);
+				color: white !important;
+			}
+			.icon1{
+				color: white;
+				font-size: 22px;
+			}
+			.icon1:hover{
+				/*color: var(--primary-color);*/
+			}
+			.icon2{
+				color: white;
+				font-size: 22px;
+			}
+			.icon2:hover{
+				color: var(--primary-color);
+			}
+			.title{
+				text-transform: uppercase;
+			}
+			.seperator{
+				background-color: dodgerblue;
+				padding-left: 0px !important;
+				padding-right: 0px!important;
+			}
+			/*.seperator:hover{
+				background-color: red;
+			}*/
+			.seperator1{
+				background-color: navy;
+				padding-left: 0px !important;
+				padding-right: 0px!important;
+			}
+			.fit{
+				object-fit: cover;
+				object-position: center;
+			}
+			.img-class{
+				margin-top: -20px;
+			}
+			.cb{
+			padding: 1rem;
+			}
+			hr{
+				border-color: var(--primary-color);
+			}
+			.footer-hr{
+				margin-top: 8px !important;
+				border-color: white;
+			}
+			@media screen and (min-width: 768px){
+				li.test{
+					padding: 10px;
+					position: relative;
+				}
+				li.test:hover{
+					background-color: var(--primary-color);
+					color: white !important;
+				}
+				li.test:hover div.test1:before{
+					content: "";
+					width: 0px;
+					height: 0px;
+					position: absolute;
+					left: 0;
+					right: 0;
+					margin: auto;
+					border-left: 10px solid transparent;
+					border-right: 10px solid transparent;
+					border-top: 20px solid tomato;
+					bottom: -12px;
+				}
+				nav{
+					padding: 0px !important;
+				}
+				.navlogo{
+					padding: 15px !important;
+				}
+				a:hover{
+					color: white !important;
+				}
+			}
+			/* blockquote p:before {
+			content: "#f10d";
+			font-family: 'sans-serif';
+			float: left;
+			margin-right: 10px;
+			}*/
+			/*blockquote {
+			background: #f9f9f9;
+			border-left: 10px solid #ccc;
+			margin: 1.5em 10px;
+			padding: 0.5em 10px;
+			quotes: "\201C";
+			}*/
+			blockquote p:before {
+			color: #ccc;
+			content: open-quote;
+			font-size: 4em;
+			line-height: 0.1em;
+			margin-right: 0.25em;
+			vertical-align: -0.4em;
+			}
+			blockquote p {
+			display: inline;
+			}
+			@media screen and (max-width: 767px){
+				.dir{
+				flex-direction: column;
+			}
+				.mg:not(:last-child){
+						margin-bottom: 40px !important;
+				}
+			}
+			.outer-circle{
+				width: 90px;
+				height: 90px;
+				background-color: rgba(255, 255, 255, 0.6);
+			}
+			.outer-circle:hover{
+				background-color: var(--primary-color);
+			}
+			.inner-circle{
+				width: 70px;
+				height: 70px;
+				position: relative;
+			}
+			.stepper-line{
+				flex-grow: 1;
+				background-color: white;
+				height: 2px;
+			}
+			.circle-text{
+				font-size: 35px;
+				color: black
+			}
+			.stepper-text{
+				position: absolute;
+				text-align: center;
+				font-size: 20px;
+				font-family: var(--font);
+				bottom: -45px;
+				left: 50%;
+				width: 200px;
+				-webkit-transform: translateX(-50%);
+				transform: translateX(-50%);
+			}
+			.img-border-bottom{
+				border-bottom: 4px solid tomato;
+			}
+			.title-tagline{
+				font-size: 18px;
+			}
+			.progress-title{
+				margin-bottom: 5px;
+			}
+			.progress-height{
+				height:15px;
+			}
+			.work-hover{
+				background-color: var(--primary);
+			}
+			.work-hover:hover{
+				background-color: var(--primary-color);
+			}
+			.service-hover{
+				background-color: var(--primary);
+			}
+			.service-hover:hover{
+				background-color: var(--primary-color);
+			}
+			.tooltip-inner {
+				background-color: tomato;
+			}
+			 
+			</style>
+		</head>
+		<body>
+			<div style="position: fixed;
+    right: 0;
+    bottom: 0;
+    margin-right: 15px;
+    margin-bottom: 15px;">
+					<a type="button" class="btn btn-success"  href="#header1"><i class="fa fa-arrow-up" aria-hidden="true" style="color: white"></i></a> 
+			</div>
+			<div class="container-fluid seperator1">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 d-flex justify-content-end align-items-center">
+							<span class="p-2"><i class="fa fa-facebook icon2"></i></span>
+							<span class="p-2"><i class="fa fa-whatsapp icon2"></i></span>
+							<span class="p-2"><i class="fa fa-twitter icon2"></i></span>
+							<span class="p-2"><i class="fa fa-instagram icon2"></i></span>
+						</div>
+					</div>
+				</div>
+				<div style="background-color: var( --primary-color);height: 5px"></div>
+			</div>
+			<!-- <div class="container"> -->
+			<header id="header1">
+			<nav class="navbar navbar-expand-md bg-white navbar-light sticky-top">
+				<!-- Brand -->
+				<a class="navbar-brand navlogo" href="#"><span style="color: var(--primary-color); font-weight: bold;"><strong>BUSINESS<span style="color: black;">id</span></strong></span></a>
+				<!-- Toggler/collapsibe Button -->
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style="border-color: orange;margin-right: 15px">
+				<span class="navbar-toggler-icon"></span>
+				</button>
+				<!-- Navbar links -->
+				<div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+					<ul class="navbar-nav">
+						<li class="nav-item test">
+							<a class="nav-link" href="#">Home</a>
+							<div class="test1"></div>
+						</li>
+						<li class="nav-item test">
+							<a class="nav-link" href="#services">Services</a>
+							<div class="test1"></div>
+						</li>
+						<li class="nav-item test">
+							<a class="nav-link" href="#aboutus">About Us</a>
+							<div class="test1"></div>
+						</li>
+						<li class="nav-item test">
+							<a class="nav-link" href="#ourwork">Our Work</a>
+							<div class="test1"></div>
+						</li>
+						<li class="nav-item test">
+							<a class="nav-link" href="#portfolio">Portfolio</a>
+							<div class="test1"></div>
+						</li>
+						<li class="nav-item test">
+							<a class="nav-link" href="#contactus">Contact Us</a>
+							<div class="test1"></div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<!-- </div> -->
+			<div id="demo" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ul class="carousel-indicators">
+					<li data-target="#demo" data-slide-to="0" class="active"></li>
+					<li data-target="#demo" data-slide-to="1"></li>
+					<li data-target="#demo" data-slide-to="2"></li>
+				</ul>
+				<!-- The slideshow -->
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img src="1.jpg" alt="Los Angeles">
+					</div>
+					<div class="carousel-item">
+						<img src="2.jpg" alt="Chicago">
+					</div>
+					<div class="carousel-item">
+						<img src="3.jpg" alt="New York">
+					</div>
+				</div>
+				<!-- Left and right controls -->
+				<a class="carousel-control-prev" href="#demo" data-slide="prev">
+					<span class="carousel-control-prev-icon"></span>
+				</a>
+				<a class="carousel-control-next" href="#demo" data-slide="next">
+					<span class="carousel-control-next-icon"></span>
+				</a>
+			</div>
+			</header>
+			<section id="services">
+				<div class="container mb-5">
+					<div class="row">
+						<div class="col-sm-12 col-md-4 col-lg-4 mb-4">
+							<img src="1.jpg" class="img-fluid img-class img-border-bottom">
+						</div>
+						<div class="col-sm-12 col-md-4 col-lg-4 mb-4">
+							<img src="1.jpg" class="img-fluid img-class img-border-bottom">
+						</div>
+						<div class="col-sm-12 col-md-4 col-lg-4 mb-4">
+							<img src="1.jpg" class="img-fluid img-class">
+							<div style="background-color: tomato;height: 4px"></div>
+						</div>
+					</div>
+					<div class="text-center mt-5 mb-5">
+						<h1 class="title">SERVICES</h1>
+						<p class="title-tagline">We Are Leading Software Development Company</p>
+					</div>
+					<div class="row">
+						<div class="col-sm-12 col-md-4 mb-3 mt-3">
+							<div class="d-flex align-items-start">
+								<div class="shadow rounded p-3 service-hover">
+									<span><i class="fa fa-edit icon1"></i></span>
+								</div>
+								<div>
+									<div class="ml-3">
+										<h4 class="h4">Need Another Service ?</h4>
+										<p class="mb-0 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-md-4 mb-3 mt-3">
+							<div class="d-flex align-items-start">
+								<div class="shadow rounded p-3 service-hover">
+									<span><i class="fa fa-edit icon1"></i></span>
+								</div>
+								<div>
+									<div class="ml-3">
+										<h4 class="h4">Need Another Service ?</h4>
+										<p class="mb-0 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-md-4 mb-3 mt-3">
+							<div class="d-flex align-items-start">
+								<div class="shadow rounded p-3 service-hover">
+									<span><i class="fa fa-edit icon1"></i></span>
+								</div>
+								<div>
+									<div class="ml-3">
+										<h4 class="h4">Need Another Service ?</h4>
+										<p class="mb-0 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<hr>
+			<section id="aboutus">
+				<div class="container mt-5 mb-5">
+					<div class="text-center mt-5 mb-5">
+						<h1 class="title">about us</h1>
+						<p class="title-tagline">We Are Leading Software Development Company</p>
+					</div>
+					<div class="row mt-5">
+						<div class="col-sm-12 col-md-4 mb-3">
+							<div id="demo1" class="carousel slide" data-ride="carousel">
+								<!-- Indicators -->
+								<ul class="carousel-indicators">
+									<li data-target="#demo1" data-slide-to="0" class="active"></li>
+									<li data-target="#demo1" data-slide-to="1"></li>
+									<li data-target="#demo1" data-slide-to="2"></li>
+								</ul>
+								<!-- The slideshow -->
+								<div class="carousel-inner">
+									<div class="carousel-item active">
+										<img src="1.jpg" alt="Los Angeles">
+									</div>
+									<div class="carousel-item">
+										<img src="2.jpg" alt="Chicago">
+									</div>
+									<div class="carousel-item">
+										<img src="3.jpg" alt="New York">
+									</div>
+								</div>
+								<!-- Left and right controls -->
+								<a class="carousel-control-prev" href="#demo1" data-slide="prev">
+									<span class="carousel-control-prev-icon"></span>
+								</a>
+								<a class="carousel-control-next" href="#demo1" data-slide="next">
+									<span class="carousel-control-next-icon"></span>
+								</a>
+							</div>
+						</div>
+						<div class="col-sm-12 col-md-4 mb-3">
+							<p style="font-weight: bold;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+							<ul class="list-unstyled">
+								<li><i class="fa fa-check icon"></i> Dynamic Content Delivety</li>
+								<li><i class="fa fa-check icon"></i> Dynamic Content Delivety</li>
+								<li><i class="fa fa-check icon"></i> Dynamic Content Delivety</li>
+								<li><i class="fa fa-check icon"></i> Dynamic Content Delivety</li>
+							</ul>
+						</div>
+						<div class="col-sm-12 col-md-4 mb-3">
+							<div class="mb-3">
+								<p class="progress-title">Web Design</p>
+								<div class="progress progress-hight">
+									<div class="progress-bar" style="width:70%" data-toggle="tooltip" title="70%">70%</div>
+								</div>
+							</div>
+							<div class="mb-3">
+								<p class="progress-title">Graphics Design</p>
+								<div class="progress progress-height">
+									<div class="progress-bar" data-toggle="tooltip" title="60%" style="width:60%">60%</div>
+								</div>
+							</div>
+							<div class="mb-3">
+								<p class="progress-title">Adobe Premiere Pro</p>
+								<div class="progress progress-height">
+									<div class="progress-bar" style="width:90%" data-toggle="tooltip" title="90%">90%</div>
+								</div>
+							</div>
+							<div class="mb-3">
+								<p class="progress-title">Adobe After Effects</p>
+								<div class="progress progress-height">
+									<div class="progress-bar" style="width:70%" data-toggle="tooltip" title="70%">70%</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="container-fluid seperator1">
+					<div class="container p-4">
+						<div class="row p-5 text-white">
+							<div class="col-12 d-flex justify-content-around align-items-center dir">
+								<div class="mg">
+									<div class="rounded-circle d-flex justify-content-center align-items-center align-self-center outer-circle">
+										<div class="rounded-circle bg-white d-flex justify-content-center align-items-center inner-circle">
+											<div class="circle-text">1</div>
+											<div class="stepper-text">First Child</div>
+										</div>
+									</div>
+								</div>
+								<div class="stepper-line"></div>
+								<div class="mg">
+									<div class="rounded-circle d-flex justify-content-center align-items-center align-self-center outer-circle">
+										<div class="rounded-circle bg-white d-flex justify-content-center align-items-center inner-circle">
+											<div class="circle-text">2</div>
+											<div class="stepper-text">Second Child</div>
+										</div>
+									</div>
+								</div>
+								<div class="stepper-line"></div>
+								<div class="mg">
+									<div class="rounded-circle d-flex justify-content-center align-items-center align-self-center outer-circle">
+										<div class="rounded-circle bg-white d-flex justify-content-center align-items-center inner-circle">
+											<div class="circle-text">3</div>
+											<div class="stepper-text">Third Child</div>
+										</div>
+									</div>
+								</div>
+								<div class="stepper-line"></div>
+								<div  class="mg">
+									<div class="rounded-circle d-flex justify-content-center align-items-center align-self-center outer-circle">
+										<div class="rounded-circle bg-white d-flex justify-content-center align-items-center inner-circle">
+											<div class="circle-text">4</div>
+											<div class="stepper-text">Fourth Child</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="ourwork">
+				<div class="container mt-5 mb-5">
+					<div class="text-center mt-3">
+						<h1 class="title">our work</h1>
+						<p class="title-tagline">We Are Leading Software Development Company</p>
+					</div>
+					<div class="row mt-5">
+						<div class="col-sm-12 col-md-6">
+							<div class="d-flex mb-4 align-items-start">
+								<div class="shadow rounded p-3 text-white work-hover">
+									<span><!-- <i class="fa fa-edit"></i> -->1</span>
+								</div>
+								<div>
+									<div class="ml-3">
+										<!-- <h4 class="text-primary h4">Need Another Service ?</h4> -->
+										<p class="mb-0 text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua.</p>
+									</div>
+								</div>
+							</div>
+							<div class="d-flex mb-4 align-items-start">
+								<div class="shadow rounded p-3 text-white work-hover">
+									<span><!-- <i class="fa fa-edit"></i> -->2</span>
+								</div>
+								<div>
+									<div class="ml-3">
+										<!-- <h4 class="text-primary h4">Need Another Service ?</h4> -->
+										<p class="mb-0 text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua.</p>
+									</div>
+								</div>
+							</div>
+							<div class="d-flex mb-4 align-items-start">
+								<div class="shadow rounded p-3 text-white work-hover">
+									<span><!-- <i class="fa fa-edit"></i> -->3</span>
+								</div>
+								<div>
+									<div class="ml-3">
+										<!-- <h4 class="text-primary h4">Need Another Service ?</h4> -->
+										<p class="mb-0 text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-md-6">
+							<div class="d-flex mb-4 align-items-start">
+								<div class="shadow rounded p-3 text-white work-hover">
+									<span><!-- <i class="fa fa-edit"></i> -->4</span>
+								</div>
+								<div>
+									<div class="ml-3">
+										<!-- <h4 class="text-primary h4">Need Another Service ?</h4> -->
+										<p class="mb-0 text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua.</p>
+									</div>
+								</div>
+							</div>
+							<div class="d-flex mb-4 align-items-start">
+								<div class="shadow rounded p-3 text-white work-hover">
+									<span><!-- <i class="fa fa-edit"></i> -->5</span>
+								</div>
+								<div>
+									<div class="ml-3">
+										<!-- <h4 class="text-primary h4">Need Another Service ?</h4> -->
+										<p class="mb-0 text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="container-fluid seperator1" style="overflow-x: hidden;">
+					<div class="container">
+						<div id="demo3" class="carousel slide" data-ride="carousel">
+							<!-- Indicators -->
+							<div class="row p-3 text-white">
+								<ul class="carousel-indicators">
+									<li data-target="#demo3" data-slide-to="0" class="active"></li>
+									<li data-target="#demo3" data-slide-to="1"></li>
+									<li data-target="#demo3" data-slide-to="2"></li>
+								</ul>
+								<!-- The slideshow -->
+								<div class="carousel-inner1">
+									<div class="carousel-item active">
+										<div class="row">
+											<div class="col-sm-12 col-md-4">
+												<div class="row">
+													<div class="col-12 d-flex align-items-center" style="flex-direction: column !important;">
+														<div class="mb-1">
+															<img src="avtar.jpeg" class="fit rounded-circle" width="80" height="80">
+														</div>
+														<div class="d-flex align-items-center mb-1" style="flex-direction: column;">
+															<p style="margin-bottom: 0px;">Darpan Sagpariya</p>
+															<p style="margin-bottom: 0px;">Founder</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-12 col-md-8 d-flex">
+												<div class="justify-content-start align-self-center">
+													<blockquote class="item" style="margin: 0px !important;" cite="https://www.huxley.net/bnw/four.html">
+														<p style="margin-bottom: 0px !important;">Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced.</p>
+													</blockquote>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="row">
+											<div class="col-sm-12 col-md-4">
+												<div class="row">
+													<div class="col-12 d-flex align-items-center" style="flex-direction: column !important;">
+														<div class="mb-1">
+															<img src="avtar.jpeg" class="fit rounded-circle" width="80" height="80">
+														</div>
+														<div class="d-flex align-items-center mb-1" style="flex-direction: column;">
+															<p style="margin-bottom: 0px;">Darpan Sagpariya</p>
+															<p style="margin-bottom: 0px;">Founder</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-12 col-md-8 d-flex">
+												<div class="justify-content-start align-self-center">
+													<blockquote class="item" style="margin: 0px !important;" cite="https://www.huxley.net/bnw/four.html">
+														<p style="margin-bottom: 0px !important;">Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced.</p>
+													</blockquote>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="row">
+											<div class="col-sm-12 col-md-4">
+												<div class="row">
+													<div class="col-12 d-flex align-items-center" style="flex-direction: column !important;">
+														<div class="mb-1">
+															<img src="avtar.jpeg" class="fit rounded-circle" width="80" height="80">
+														</div>
+														<div class="d-flex align-items-center mb-1" style="flex-direction: column;">
+															<p style="margin-bottom: 0px;">Darpan Sagpariya</p>
+															<p style="margin-bottom: 0px;">Founder</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-12 col-md-8 d-flex">
+												<div class="justify-content-start align-self-center">
+													<blockquote class="item" style="margin: 0px !important;" cite="https://www.huxley.net/bnw/four.html">
+														<p style="margin-bottom: 0px !important;">Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced.</p>
+													</blockquote>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="portfolio">
+				<div class="container mt-5 mb-5">
+					<div class="text-center mt-5 mb-5">
+						<h1 class="title">portfolio</h1>
+						<p class="title-tagline">We Are Leading Software Development Company</p>
+					</div>
+					<div class="row">
+						<div class="col-sm-12 col-md-3 col-lg-3">
+							<div class="card shadow bg-white border-0 rounded mb-3">
+								<img src="1.jpg" class="card-img-top">
+								<div class="card-body cb">
+									<div class="row">
+										<div class="col-12 d-flex justify-content-between">
+											<div class="align-self-center">
+												<p style="margin-bottom: 0px">GLOSSY</p>
+											</div>
+											<div class="align-self-center">
+												<p style="margin-bottom: 0px">22 <span><i class="fa fa-heart-o "></i></span></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-md-3 col-lg-3">
+							<div class="card shadow bg-white border-0 rounded mb-3">
+								<img src="2.jpg" class="card-img-top">
+								<div class="card-body cb">
+									<div class="row">
+										<div class="col-12 d-flex justify-content-between">
+											<div class="align-self-center">
+												<p style="margin-bottom: 0px">GVT/PGVT</p>
+											</div>
+											<div class="align-self-center">
+												<p style="margin-bottom: 0px">23 <span><i class="fa fa-heart-o "></i></span></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-md-3 col-lg-3">
+							<div class="card shadow bg-white border-0 rounded mb-3">
+								<img src="3.jpg" class="card-img-top">
+								<div class="card-body cb">
+									<div class="row">
+										<div class="col-12 d-flex justify-content-between">
+											<div class="align-self-center">
+												<p style="margin-bottom: 0px">MATT</p>
+											</div>
+											<div class="align-self-center">
+												<p style="margin-bottom: 0px">24 <span><i class="fa fa-heart-o "></i></span></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-md-3 col-lg-3">
+							<div class="card shadow bg-white border-0 rounded mb-3">
+								<img src="4.jpg" class="card-img-top">
+								<div class="card-body cb">
+									<div class="row">
+										<div class="col-12 d-flex justify-content-between">
+											<div class="align-self-center">
+												<p style="margin-bottom: 0px">SLAB</p>
+											</div>
+											<div class="align-self-center">
+												<p style="margin-bottom: 0px">25 <span><i class="fa fa-heart-o "></i></span></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12 col-md-3 col-lg-3">
+							<div class="card shadow bg-white border-0 rounded mb-3">
+								<img src="5.jpg" class="card-img-top">
+								<div class="card-body cb">
+									<div class="row">
+										<div class="col-12 d-flex justify-content-between">
+											<div class="align-self-center">
+												<p style="margin-bottom: 0px">VITRIFIED</p>
+											</div>
+											<div class="align-self-center">
+												<p style="margin-bottom: 0px">26 <span><i class="fa fa-heart-o "></i></span></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-md-3 col-lg-3">
+							<div class="card shadow bg-white border-0 rounded mb-3">
+								<img src="6.jpg" class="card-img-top">
+								<div class="card-body cb">
+									<div class="row">
+										<div class="col-12 d-flex justify-content-between">
+											<div class="align-self-center">
+												<p style="margin-bottom: 0px">Parking</p>
+											</div>
+											<div class="align-self-center">
+												<p style="margin-bottom: 0px">27 <span><i class="fa fa-heart-o "></i></span></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-md-3 col-lg-3">
+							<div class="card shadow bg-white border-0 rounded mb-3">
+								<img src="7.jpg" class="card-img-top">
+								<div class="card-body cb">
+									<div class="row">
+										<div class="col-12 d-flex justify-content-between">
+											<div class="align-self-center">
+												<p style="margin-bottom: 0px">Wall</p>
+											</div>
+											<div class="align-self-center">
+												<p style="margin-bottom: 0px">28 
+													<span class="">
+													<i class="fa fa-heart"></i>
+													</span>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-md-3 col-lg-3">
+							<div class="card shadow bg-white border-0 rounded mb-3">
+								<img src="8.jpg" class="card-img-top">
+								<div class="card-body cb">
+									<div class="row">
+										<div class="col-12 d-flex justify-content-between">
+											<div class="align-self-center">
+												<p style="margin-bottom: 0px">NEW 3D</p>
+											</div>
+											<div class="align-self-center">
+												<p style="margin-bottom: 0px">29 <span class=""><i class="fa fa-heart"></i> </span></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="container-fluid seperator">
+					<div class="container mt-3">
+						<div class="row text-white " style="padding: 20px 0px !important;">
+							<div class="col-md-8 col-sm-12 d-flex">
+								<div class="align-self-center">
+									<h3>Connect With us Socially</h3>
+									<p style="margin-bottom: 5px !important;" class="text-center">We Are Leading Software Development Company</p>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-12 d-flex justify-content-center">
+								<div class="align-self-center">
+									<span class="p-1"><i class="fa fa-facebook icon2"></i></span>
+									<span class="p-1"> <i class="fa fa-instagram icon2"></i></span>
+									<span class="p-1"> <i class="fa fa-whatsapp icon2"></i></span>
+									<span class="p-1"><i class="fa fa-twitter icon2"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="contactus">
+				<div class="container-fluid seperator1">
+					<div class="container">
+						<div class="row text-white pt-5 pb-5">
+							<div class="col-sm-12 col-md-4 mb-5">
+								<div class="row d-flex justify-content-start">
+									<div class="d-flex col-12">
+										<div class="justify-content-start">
+											<span><i class="fa fa-edit"></i></span>
+										</div>
+										<div class="ml-3 justify-content-start" style="flex-grow: 2">
+											Recent From Blog
+										</div>
+									</div>
+								</div>
+								<hr class="footer-hr">
+								<div class="row mt-4">
+									<div class="col-3">
+										<img src="cv1.png" class="img-fluid rounded-lg bg-white" width="80" height="80">
+									</div>
+									<div class="col-9">
+										<p style="margin-bottom: 8px !important;">How We Create New App</p>
+										<p>21/11/1998 | Read More</p>
+									</div>
+								</div>
+								<hr class="footer-hr">
+								<div class="row mt-4">
+									<div class="col-3">
+										<img src="cv2.png" class="img-fluid rounded-lg bg-white" width="80" height="80">
+									</div>
+									<div class="col-9">
+										<p style="margin-bottom: 8px !important;">How We Create New App</p>
+										<p>21/11/1998 | Read More</p>
+									</div>
+								</div>
+								<hr class="footer-hr">
+								<div class="row mt-4">
+									<div class="col-3">
+										<img src="cv3.png" class="img-fluid rounded-lg bg-white" width="80" height="80">
+									</div>
+									<div class="col-9">
+										<p style="margin-bottom: 8px !important;">How We Create New App</p>
+										<p>21/11/1998 | Read More</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-8">
+								<div class="row d-flex justify-content-start">
+									<div class="d-flex col-12">
+										<div class="justify-content-start">
+											<span><i class="fa fa-envelope"></i></span>
+										</div>
+										<div class="ml-3 justify-content-start flex-grow-2">
+											Contact
+										</div>
+									</div>
+								</div>
+								<hr class="footer-hr">
+								<div class="row mt-4 p-2">
+									<div class="col-sm-12 col-md-4">
+										<div class="row d-flex justify-content-start mb-3">
+											<div class="d-flex col-12">
+												<div class="justify-content-start">
+													<span><i class="fa fa-home"></i></span>
+												</div>
+												<div class="ml-3 justify-content-start flex-grow-2">
+													Prolance IT,
+													L.H.Road,Near Vasant Bhikha ni Vadi, Surat
+												</div>
+											</div>
+										</div>
+										<div class="row d-flex justify-content-start mb-3">
+											<div class="d-flex col-12">
+												<div class="justify-content-start">
+													<span><i class="fa fa-phone"></i></span>
+												</div>
+												<div class="ml-3 justify-content-start flex-grow-2">
+													Phone :- +91 9999999999
+												</div>
+											</div>
+										</div>
+										<div class="row d-flex justify-content-start mb-3">
+											<div class="d-flex col-12">
+												<div class="justify-content-start">
+													<span><i class="fa fa-envelope"></i></span>
+												</div>
+												<div class="ml-3 justify-content-start" style="flex-grow: 2">
+													info@example.com
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-12 col-md-8">
+										<img src="map2.png" class="img-fluid">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="container-fluid seperator">
+					<div class="container">
+						<div class="row text-white" style="padding: 20px 0px !important;">
+							<div class="col-md-7 col-sm-12 d-flex">
+								<div class="align-self-center">
+									<h3 class="title text-center" style="margin-bottom: 5px !important;margin-top: 5px !important;">Subscribe to Our <b>Newsletter</b></h3>
+								</div>
+							</div>
+							<div class="col-md-5 col-sm-12 d-flex justify-content-center">
+								<div class="align-self-center">
+									<div class="input-group">
+										<input type="text" class="form-control" placeholder="Your Email" id="mail" name="email">
+										<div class="input-group-append">
+											<button type="submit" class="btn btn-success">Submit</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section>
+					<div class="container-fluid seperator1">
+						<div class="container">
+							<div class="row text-white" style="padding: 15px 0px !important;">
+								<div class="col-12 d-flex justify-content-start align-items-center">
+									<div>
+										<h2 style="margin-bottom: 0px !important;">BUSINESSid</h2>
+									</div>
+									<div class="ml-3">
+										<p style="margin-bottom: 0px;">
+											<script type="text/javascript">document.write(new Date().getFullYear());</script> &copy; All Rights Reserved.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<script>
+						$(document).ready(function(){
+						$('[data-toggle="tooltip"]').tooltip();
+						});
+ 
+						</script>
+		</body>
+</html>
