@@ -22,7 +22,7 @@
 				--title:'Fredoka One', cursive;
 				--heading:'Russo One', cursive;
 				--p:'Raleway', cursive;
-				--bg-color: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+				/*--bg-color: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);*/
 				--bg:white;
 			--primary-color: tomato;
 			}
@@ -44,8 +44,11 @@
 			a:hover{
 				color: white !important;
 			}
+			/*li a:active{
+					background-color: tomato;
+				}*/
 			.icon{
-				color: springgreen;
+				color: rgba(96,168,182,255);
 			}
 			li.test:hover{
 				background-color: var(--primary-color);
@@ -69,15 +72,25 @@
 				text-transform: uppercase;
 			}
 			.seperator{
-				background-color: dodgerblue;
-				padding-left: 0px !important;
-				padding-right: 0px!important;
+				background-color: rgba(135,195,204,255);
+			}
+			.seperator3{
+				background-color: rgba(96,168,186,255);
+			}
+			.seperator4{
+				background-color: rgba(78,144,160,255);
+			}
+			.seperator5{
+				background-color: rgba(115,175,194,255);
 			}
 			/*.seperator:hover{
 				background-color: red;
 			}*/
 			.seperator1{
-				background-color: navy;
+				background: rgb(124,197,192);
+				background: radial-gradient(circle, rgba(124,197,192,1) 61%, rgba(95,157,181,1) 100%);
+			}
+			.container-class{
 				padding-left: 0px !important;
 				padding-right: 0px!important;
 			}
@@ -98,6 +111,9 @@
 				margin-top: 8px !important;
 				border-color: white;
 			}
+				.active1 {
+				background-color: var(--primary-color);
+			}
 			@media screen and (min-width: 768px){
 				li.test{
 					padding: 10px;
@@ -107,7 +123,7 @@
 					background-color: var(--primary-color);
 					color: white !important;
 				}
-				li.test:hover div.test1:before{
+				li.test:hover div.test1:before, li.active1 div.test1:before{
 					content: "";
 					width: 0px;
 					height: 0px;
@@ -129,6 +145,7 @@
 				a:hover{
 					color: white !important;
 				}
+				
 			}
 			/* blockquote p:before {
 			content: "#f10d";
@@ -154,12 +171,23 @@
 			blockquote p {
 			display: inline;
 			}
+			.nav-button{
+				border-color: tomato;
+				margin-right: 15px;
+			}
 			@media screen and (max-width: 767px){
 				.dir{
 				flex-direction: column;
-			}
+				}
 				.mg:not(:last-child){
 						margin-bottom: 40px !important;
+				}
+				#navContainer{
+					padding-left: 0px !important;
+					padding-right: 0px !important;
+				}
+				.nav-button{
+					margin-right: 6px !important;
 				}
 			}
 			.outer-circle{
@@ -208,13 +236,13 @@
 				height:15px;
 			}
 			.work-hover{
-				background-color: var(--primary);
+				background-color: rgba(96,168,182,255);
 			}
 			.work-hover:hover{
 				background-color: var(--primary-color);
 			}
 			.service-hover{
-				background-color: var(--primary);
+				background-color: rgba(96,168,182,255);
 			}
 			.service-hover:hover{
 				background-color: var(--primary-color);
@@ -222,18 +250,43 @@
 			.tooltip-inner {
 				background-color: tomato;
 			}
-			 
+			.progress-bg{
+				background-color: rgba(96,168,182,255);
+			}
 			</style>
+			<script>
+				// $('li > a').click(function() {
+				// $('li').removeClass();
+				// $(this).parent().addClass('active');
+				// });
+// 				$("li").click(function(){
+//   // If this isn't already active
+//   if (!$(this).hasClass("active1")) {
+//     // Remove the class from anything that is active
+//     $("li.active1").removeClass("active1");
+//     // And make this active
+//     $(this).addClass("active1");
+//   }
+// });
+
+$(document).ready(function(){
+  $('ul li').click(function(){
+    $('li').removeClass("active1");
+    $(this).addClass("active1");
+});
+});
+			</script>
 		</head>
 		<body>
 			<div style="position: fixed;
-    right: 0;
-    bottom: 0;
-    margin-right: 15px;
-    margin-bottom: 15px;">
-					<a type="button" class="btn btn-success"  href="#services"><i class="fa fa-arrow-up" aria-hidden="true" style="color: white"></i></a> 
+				right: 0;
+				bottom: 0;
+				margin-right: 15px;
+				margin-bottom: 15px;
+				z-index: 10;">
+				<a type="button" class="btn btn-success"  href="#services"><i class="fa fa-arrow-up" aria-hidden="true" style="color: white"></i></a>
 			</div>
-			<div class="container-fluid seperator1">
+			<div class="container-fluid container-class seperator3">
 				<div class="container">
 					<div class="row">
 						<div class="col-12 d-flex justify-content-end align-items-center">
@@ -246,45 +299,48 @@
 				</div>
 				<div style="background-color: var( --primary-color);height: 5px"></div>
 			</div>
-			<!-- <div class="container"> -->
-			 
+			
+			
 			<nav class="navbar navbar-expand-md bg-white navbar-light sticky-top">
 				<!-- Brand -->
-				<a class="navbar-brand navlogo" href="#"><span style="color: var(--primary-color); font-weight: bold;"><strong>BUSINESS<span style="color: black;">id</span></strong></span></a>
-				<!-- Toggler/collapsibe Button -->
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style="border-color: orange;margin-right: 15px">
-				<span class="navbar-toggler-icon"></span>
-				</button>
-				<!-- Navbar links -->
-				<div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-					<ul class="navbar-nav">
-						<li class="nav-item test">
-							<a class="nav-link" href="#">Home</a>
-							<div class="test1"></div>
-						</li>
-						<li class="nav-item test">
-							<a class="nav-link" href="#services">Services</a>
-							<div class="test1"></div>
-						</li>
-						<li class="nav-item test">
-							<a class="nav-link" href="#aboutus">About Us</a>
-							<div class="test1"></div>
-						</li>
-						<li class="nav-item test">
-							<a class="nav-link" href="#ourwork">Our Work</a>
-							<div class="test1"></div>
-						</li>
-						<li class="nav-item test">
-							<a class="nav-link" href="#portfolio">Portfolio</a>
-							<div class="test1"></div>
-						</li>
-						<li class="nav-item test">
-							<a class="nav-link" href="#contactus">Contact Us</a>
-							<div class="test1"></div>
-						</li>
-					</ul>
+				<div class="container" id="navContainer">
+					<a class="navbar-brand navlogo" href="#"><span style="color: var(--primary-color); font-weight: bold;"><strong>BUSINESS<span style="color: black;">id</span></strong></span></a>
+					<!-- Toggler/collapsibe Button -->
+					<button class="navbar-toggler nav-button" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+					<span class="navbar-toggler-icon"></span>
+					</button>
+					<!-- Navbar links -->
+					<div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+						<ul class="navbar-nav" id="navList">
+							<li class="nav-item test active1">
+								<a class="nav-link" href="#">Home</a>
+								<div class="test1"></div>
+							</li>
+							<li class="nav-item test">
+								<a class="nav-link" href="#services">Services</a>
+								<div class="test1"></div>
+							</li>
+							<li class="nav-item test">
+								<a class="nav-link" href="#aboutus">About Us</a>
+								<div class="test1"></div>
+							</li>
+							<li class="nav-item test">
+								<a class="nav-link" href="#ourwork">Our Work</a>
+								<div class="test1"></div>
+							</li>
+							<li class="nav-item test">
+								<a class="nav-link" href="#portfolio">Portfolio</a>
+								<div class="test1"></div>
+							</li>
+							<li class="nav-item test">
+								<a class="nav-link" href="#contactus">Contact Us</a>
+								<div class="test1"></div>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</nav>
+			
 			<!-- </div> -->
 			<div id="demo" class="carousel slide" data-ride="carousel">
 				<!-- Indicators -->
@@ -313,7 +369,7 @@
 					<span class="carousel-control-next-icon"></span>
 				</a>
 			</div>
-			 
+			
 			<section id="services">
 				<div class="container mb-5">
 					<div class="row">
@@ -428,25 +484,25 @@
 							<div class="mb-3">
 								<p class="progress-title">Web Design</p>
 								<div class="progress progress-hight">
-									<div class="progress-bar" style="width:70%" data-toggle="tooltip" title="70%">70%</div>
+									<div class="progress-bar progress-bg" style="width:70%" data-toggle="tooltip" title="70%">70%</div>
 								</div>
 							</div>
 							<div class="mb-3">
 								<p class="progress-title">Graphics Design</p>
 								<div class="progress progress-height">
-									<div class="progress-bar" data-toggle="tooltip" title="60%" style="width:60%">60%</div>
+									<div class="progress-bar progress-bg" data-toggle="tooltip" title="60%" style="width:60%">60%</div>
 								</div>
 							</div>
 							<div class="mb-3">
 								<p class="progress-title">Adobe Premiere Pro</p>
 								<div class="progress progress-height">
-									<div class="progress-bar" style="width:90%" data-toggle="tooltip" title="90%">90%</div>
+									<div class="progress-bar progress-bg" style="width:90%" data-toggle="tooltip" title="90%">90%</div>
 								</div>
 							</div>
 							<div class="mb-3">
 								<p class="progress-title">Adobe After Effects</p>
 								<div class="progress progress-height">
-									<div class="progress-bar" style="width:70%" data-toggle="tooltip" title="70%">70%</div>
+									<div class="progress-bar progress-bg" style="width:70%" data-toggle="tooltip" title="70%">70%</div>
 								</div>
 							</div>
 						</div>
@@ -454,7 +510,7 @@
 				</div>
 			</section>
 			<section>
-				<div class="container-fluid seperator1">
+				<div class="container-fluid container-class seperator1">
 					<div class="container p-4">
 						<div class="row p-5 text-white">
 							<div class="col-12 d-flex justify-content-around align-items-center dir">
@@ -573,7 +629,7 @@
 				</div>
 			</section>
 			<section>
-				<div class="container-fluid seperator1" style="overflow-x: hidden;">
+				<div class="container-fluid container-class seperator1" style="overflow-x: hidden;">
 					<div class="container">
 						<div id="demo3" class="carousel slide" data-ride="carousel">
 							<!-- Indicators -->
@@ -785,9 +841,9 @@
 												<p style="margin-bottom: 0px">Wall</p>
 											</div>
 											<div class="align-self-center">
-												<p style="margin-bottom: 0px">28 
+												<p style="margin-bottom: 0px">28
 													<span class="">
-													<i class="fa fa-heart"></i>
+														<i class="fa fa-heart"></i>
 													</span>
 												</p>
 											</div>
@@ -817,7 +873,7 @@
 				</div>
 			</section>
 			<section>
-				<div class="container-fluid seperator">
+				<div class="container-fluid container-class seperator">
 					<div class="container mt-3">
 						<div class="row text-white " style="padding: 20px 0px !important;">
 							<div class="col-md-8 col-sm-12 d-flex">
@@ -839,7 +895,7 @@
 				</div>
 			</section>
 			<section id="contactus">
-				<div class="container-fluid seperator1">
+				<div class="container-fluid container-class seperator5">
 					<div class="container">
 						<div class="row text-white pt-5 pb-5">
 							<div class="col-sm-12 col-md-4 mb-5">
@@ -940,7 +996,7 @@
 				</div>
 			</section>
 			<section>
-				<div class="container-fluid seperator">
+				<div class="container-fluid container-class seperator3">
 					<div class="container">
 						<div class="row text-white" style="padding: 20px 0px !important;">
 							<div class="col-md-7 col-sm-12 d-flex">
@@ -962,7 +1018,7 @@
 					</div>
 				</section>
 				<section>
-					<div class="container-fluid seperator1">
+					<div class="container-fluid seperator4">
 						<div class="container">
 							<div class="row text-white" style="padding: 15px 0px !important;">
 								<div class="col-12 d-flex justify-content-start align-items-center">
@@ -981,7 +1037,7 @@
 						$(document).ready(function(){
 						$('[data-toggle="tooltip"]').tooltip();
 						});
- 
+						
 						</script>
-		</body>
-</html>
+					</body>
+				</html>
