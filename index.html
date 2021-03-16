@@ -1090,6 +1090,12 @@
 							</div>
 						</section>
 						<script>
+							$(document).ready(function(){
+						        $('ul li').click(function(){
+							$('li').removeClass("active1");
+						        $(this).addClass("active1");
+							});
+							});
 							$(document).ready(function() {
 							//Preloader
 							preloaderFadeOutTime = 2000;
