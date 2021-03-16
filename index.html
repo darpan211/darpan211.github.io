@@ -8,12 +8,13 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css"
 			href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-			<!-- jQuery library -->
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 			<!-- Popper JS -->
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 			<!-- Latest compiled JavaScript -->
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+			<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 			<style type="text/css">
 			@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Quicksand:wght@600&display=swap');
 			@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Russo+One&family=Raleway&family=Poppins&display=swap');
@@ -111,7 +112,7 @@
 				margin-top: 8px !important;
 				border-color: white;
 			}
-				.active1 {
+			.active1 {
 				background-color: var(--primary-color);
 			}
 			@media screen and (min-width: 768px){
@@ -253,38 +254,93 @@
 			.progress-bg{
 				background-color: rgba(96,168,182,255);
 			}
+			.fadeIn{
+				animation-name: fade;
+				animation-duration: 2s;
+			animation-delay: 0.5s;
+			/*animation-timing-function: linear;*/
+			}
+			@keyframes fade {
+				0% {
+					opacity: 0;
+					transform: translateY(20px);
+				}
+				100% {
+					opacity: 1;
+					transform: translateY(0px);
+				}
+			}
+			.fadeLeft {
+				animation-name: fadeLeft;
+				animation-duration: 2s;
+			/*animation-delay: 0.5s;*/
+			animation-timing-function: ease;
+			}
+			@keyframes fadeLeft {
+				0% {
+					opacity: 0;
+					transform: translateX(-20px);
+				}
+				100% {
+					opacity: 1;
+					transform: translateX(0px);
+				}
+			}
+			.fadeRight {
+				animation-name: fadeRight;
+				animation-duration: 2s;
+			animation-delay: 0.5s;
+			/*animation-timing-function: linear;*/
+			}
+			@keyframes fadeRight {
+				0% {
+					opacity: 0;
+					transform: translateX(20px);
+				}
+				100% {
+					opacity: 1;
+					transform: translateX(0px);
+				}
+			}
+		 	.already-visible {
+			  transform: translateY(0);
+			  animation: none;
+			}
+			#preloader{
+				background-color: rgba(0,0,0,0.8);
+				position: fixed;
+				overflow: hidden;
+				height: 100%;
+				
+				width: 100%;
+				z-index: 99999;
+			}
+			#pre-load{
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				-webkit-transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
+			}
+			
 			</style>
-			<script>
-				// $('li > a').click(function() {
-				// $('li').removeClass();
-				// $(this).parent().addClass('active');
-				// });
-// 				$("li").click(function(){
-//   // If this isn't already active
-//   if (!$(this).hasClass("active1")) {
-//     // Remove the class from anything that is active
-//     $("li.active1").removeClass("active1");
-//     // And make this active
-//     $(this).addClass("active1");
-//   }
-// });
-
-$(document).ready(function(){
-  $('ul li').click(function(){
-    $('li').removeClass("active1");
-    $(this).addClass("active1");
-});
-});
-			</script>
 		</head>
 		<body>
+			<div id="preloader">
+					<div id="pre-load">
+						<div class="spinner-grow text-primary"></div>
+						<div class="spinner-grow text-success"></div>
+						<div class="spinner-grow text-warning"></div>
+						<div class="spinner-grow text-danger"></div>
+					</div>
+			</div>
 			<div style="position: fixed;
 				right: 0;
 				bottom: 0;
 				margin-right: 15px;
 				margin-bottom: 15px;
 				z-index: 10;">
-				<a type="button" class="btn btn-success"  href="#services"><i class="fa fa-arrow-up" aria-hidden="true" style="color: white"></i></a>
+				<button type="button" class="btn btn-success" onclick="topFunction()" id="backtoTop"><i class="fa fa-arrow-up" style="color: white"></i></button>
 			</div>
 			<div class="container-fluid container-class seperator3">
 				<div class="container">
@@ -373,15 +429,15 @@ $(document).ready(function(){
 			<section id="services">
 				<div class="container mb-5">
 					<div class="row">
-						<div class="col-sm-12 col-md-4 col-lg-4 mb-4">
+						<div class="col-sm-12 col-md-4 col-lg-4 mb-4 anim">
 							<img src="1.jpg" class="img-fluid img-class img-border-bottom">
 						</div>
-						<div class="col-sm-12 col-md-4 col-lg-4 mb-4">
+						<div class="col-sm-12 col-md-4 col-lg-4 mb-4 anim">
 							<img src="1.jpg" class="img-fluid img-class img-border-bottom">
 						</div>
-						<div class="col-sm-12 col-md-4 col-lg-4 mb-4">
-							<img src="1.jpg" class="img-fluid img-class">
-							<div style="background-color: tomato;height: 4px"></div>
+						<div class="col-sm-12 col-md-4 col-lg-4 mb-4 anim">
+							<img src="1.jpg" class="img-fluid img-class img-border-bottom">
+							<!-- <div style="background-color: tomato;height: 4px"></div> -->
 						</div>
 					</div>
 					<div class="text-center mt-5 mb-5">
@@ -390,7 +446,7 @@ $(document).ready(function(){
 					</div>
 					<div class="row">
 						<div class="col-sm-12 col-md-4 mb-3 mt-3">
-							<div class="d-flex align-items-start">
+							<div class="d-flex align-items-start anim">
 								<div class="shadow rounded p-3 service-hover">
 									<span><i class="fa fa-edit icon1"></i></span>
 								</div>
@@ -404,7 +460,7 @@ $(document).ready(function(){
 							</div>
 						</div>
 						<div class="col-sm-12 col-md-4 mb-3 mt-3">
-							<div class="d-flex align-items-start">
+							<div class="d-flex align-items-start anim">
 								<div class="shadow rounded p-3 service-hover">
 									<span><i class="fa fa-edit icon1"></i></span>
 								</div>
@@ -418,7 +474,7 @@ $(document).ready(function(){
 							</div>
 						</div>
 						<div class="col-sm-12 col-md-4 mb-3 mt-3">
-							<div class="d-flex align-items-start">
+							<div class="d-flex align-items-start anim">
 								<div class="shadow rounded p-3 service-hover">
 									<span><i class="fa fa-edit icon1"></i></span>
 								</div>
@@ -442,7 +498,7 @@ $(document).ready(function(){
 						<p class="title-tagline">We Are Leading Software Development Company</p>
 					</div>
 					<div class="row mt-5">
-						<div class="col-sm-12 col-md-4 mb-3">
+						<div class="col-sm-12 col-md-4 mb-3 anim">
 							<div id="demo1" class="carousel slide" data-ride="carousel">
 								<!-- Indicators -->
 								<ul class="carousel-indicators">
@@ -471,7 +527,7 @@ $(document).ready(function(){
 								</a>
 							</div>
 						</div>
-						<div class="col-sm-12 col-md-4 mb-3">
+						<div class="col-sm-12 col-md-4 mb-3 anim">
 							<p style="font-weight: bold;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
 							<ul class="list-unstyled">
 								<li><i class="fa fa-check icon"></i> Dynamic Content Delivety</li>
@@ -480,7 +536,7 @@ $(document).ready(function(){
 								<li><i class="fa fa-check icon"></i> Dynamic Content Delivety</li>
 							</ul>
 						</div>
-						<div class="col-sm-12 col-md-4 mb-3">
+						<div class="col-sm-12 col-md-4 mb-3 anim">
 							<div class="mb-3">
 								<p class="progress-title">Web Design</p>
 								<div class="progress progress-hight">
@@ -513,7 +569,7 @@ $(document).ready(function(){
 				<div class="container-fluid container-class seperator1">
 					<div class="container p-4">
 						<div class="row p-5 text-white">
-							<div class="col-12 d-flex justify-content-around align-items-center dir">
+							<div class="col-12 d-flex justify-content-around align-items-center dir anim">
 								<div class="mg">
 									<div class="rounded-circle d-flex justify-content-center align-items-center align-self-center outer-circle">
 										<div class="rounded-circle bg-white d-flex justify-content-center align-items-center inner-circle">
@@ -562,7 +618,7 @@ $(document).ready(function(){
 					</div>
 					<div class="row mt-5">
 						<div class="col-sm-12 col-md-6">
-							<div class="d-flex mb-4 align-items-start">
+							<div class="d-flex mb-4 align-items-start anim">
 								<div class="shadow rounded p-3 text-white work-hover">
 									<span><!-- <i class="fa fa-edit"></i> -->1</span>
 								</div>
@@ -574,7 +630,7 @@ $(document).ready(function(){
 									</div>
 								</div>
 							</div>
-							<div class="d-flex mb-4 align-items-start">
+							<div class="d-flex mb-4 align-items-start anim">
 								<div class="shadow rounded p-3 text-white work-hover">
 									<span><!-- <i class="fa fa-edit"></i> -->2</span>
 								</div>
@@ -586,7 +642,7 @@ $(document).ready(function(){
 									</div>
 								</div>
 							</div>
-							<div class="d-flex mb-4 align-items-start">
+							<div class="d-flex mb-4 align-items-start anim">
 								<div class="shadow rounded p-3 text-white work-hover">
 									<span><!-- <i class="fa fa-edit"></i> -->3</span>
 								</div>
@@ -600,7 +656,7 @@ $(document).ready(function(){
 							</div>
 						</div>
 						<div class="col-sm-12 col-md-6">
-							<div class="d-flex mb-4 align-items-start">
+							<div class="d-flex mb-4 align-items-start anim">
 								<div class="shadow rounded p-3 text-white work-hover">
 									<span><!-- <i class="fa fa-edit"></i> -->4</span>
 								</div>
@@ -612,7 +668,7 @@ $(document).ready(function(){
 									</div>
 								</div>
 							</div>
-							<div class="d-flex mb-4 align-items-start">
+							<div class="d-flex mb-4 align-items-start anim">
 								<div class="shadow rounded p-3 text-white work-hover">
 									<span><!-- <i class="fa fa-edit"></i> -->5</span>
 								</div>
@@ -723,13 +779,13 @@ $(document).ready(function(){
 			<section id="portfolio">
 				<div class="container mt-5 mb-5">
 					<div class="text-center mt-5 mb-5">
-						<h1 class="title">portfolio</h1>
+						<h1 class="title"> portfolio</h1>
 						<p class="title-tagline">We Are Leading Software Development Company</p>
 					</div>
 					<div class="row">
 						<div class="col-sm-12 col-md-3 col-lg-3">
-							<div class="card shadow bg-white border-0 rounded mb-3">
-								<img src="1.jpg" class="card-img-top">
+							<div class="card shadow bg-white border-0 rounded mb-3 anim">
+								<a data-fancybox="gallery" href="1.jpg"><img src="1.jpg" class="card-img-top"></a>
 								<div class="card-body cb">
 									<div class="row">
 										<div class="col-12 d-flex justify-content-between">
@@ -745,8 +801,8 @@ $(document).ready(function(){
 							</div>
 						</div>
 						<div class="col-sm-12 col-md-3 col-lg-3">
-							<div class="card shadow bg-white border-0 rounded mb-3">
-								<img src="2.jpg" class="card-img-top">
+							<div class="card shadow bg-white border-0 rounded mb-3 anim">
+								<a data-fancybox="gallery" href="2.jpg"><img src="2.jpg" class="card-img-top"></a>
 								<div class="card-body cb">
 									<div class="row">
 										<div class="col-12 d-flex justify-content-between">
@@ -762,8 +818,8 @@ $(document).ready(function(){
 							</div>
 						</div>
 						<div class="col-sm-12 col-md-3 col-lg-3">
-							<div class="card shadow bg-white border-0 rounded mb-3">
-								<img src="3.jpg" class="card-img-top">
+							<div class="card shadow bg-white border-0 rounded mb-3 anim">
+								<a data-fancybox="gallery" href="3.jpg"><img src="3.jpg" class="card-img-top"></a>
 								<div class="card-body cb">
 									<div class="row">
 										<div class="col-12 d-flex justify-content-between">
@@ -779,8 +835,8 @@ $(document).ready(function(){
 							</div>
 						</div>
 						<div class="col-sm-12 col-md-3 col-lg-3">
-							<div class="card shadow bg-white border-0 rounded mb-3">
-								<img src="4.jpg" class="card-img-top">
+							<div class="card shadow bg-white border-0 rounded mb-3 anim">
+								<a data-fancybox="gallery" data-caption="SLAB" href="4.jpg"><img src="4.jpg" class="card-img-top"></a>
 								<div class="card-body cb">
 									<div class="row">
 										<div class="col-12 d-flex justify-content-between">
@@ -798,8 +854,8 @@ $(document).ready(function(){
 					</div>
 					<div class="row">
 						<div class="col-sm-12 col-md-3 col-lg-3">
-							<div class="card shadow bg-white border-0 rounded mb-3">
-								<img src="5.jpg" class="card-img-top">
+							<div class="card shadow bg-white border-0 rounded mb-3 anim">
+								<a data-fancybox="gallery" href="5.jpg"><img src="5.jpg" class="card-img-top"></a>
 								<div class="card-body cb">
 									<div class="row">
 										<div class="col-12 d-flex justify-content-between">
@@ -815,8 +871,8 @@ $(document).ready(function(){
 							</div>
 						</div>
 						<div class="col-sm-12 col-md-3 col-lg-3">
-							<div class="card shadow bg-white border-0 rounded mb-3">
-								<img src="6.jpg" class="card-img-top">
+							<div class="card shadow bg-white border-0 rounded mb-3 anim">
+								<a data-fancybox="gallery" href="6.jpg"><img src="6.jpg" class="card-img-top"></a>
 								<div class="card-body cb">
 									<div class="row">
 										<div class="col-12 d-flex justify-content-between">
@@ -832,8 +888,8 @@ $(document).ready(function(){
 							</div>
 						</div>
 						<div class="col-sm-12 col-md-3 col-lg-3">
-							<div class="card shadow bg-white border-0 rounded mb-3">
-								<img src="7.jpg" class="card-img-top">
+							<div class="card shadow bg-white border-0 rounded mb-3 anim">
+								<a data-fancybox="gallery" href="7.jpg"><img src="7.jpg" class="card-img-top"></a>
 								<div class="card-body cb">
 									<div class="row">
 										<div class="col-12 d-flex justify-content-between">
@@ -853,8 +909,8 @@ $(document).ready(function(){
 							</div>
 						</div>
 						<div class="col-sm-12 col-md-3 col-lg-3">
-							<div class="card shadow bg-white border-0 rounded mb-3">
-								<img src="8.jpg" class="card-img-top">
+							<div class="card shadow bg-white border-0 rounded mb-3 anim">
+								<a data-fancybox="gallery" href="8.jpg"><img src="8.jpg" class="card-img-top"></a>
 								<div class="card-body cb">
 									<div class="row">
 										<div class="col-12 d-flex justify-content-between">
@@ -1034,10 +1090,61 @@ $(document).ready(function(){
 							</div>
 						</section>
 						<script>
+							$(document).ready(function() {
+							//Preloader
+							preloaderFadeOutTime = 2000;
+							function hidePreloader() {
+							let preloader = $('#pre-load, #preloader');
+							preloader.fadeOut(preloaderFadeOutTime);
+							}
+							hidePreloader();
+							});
+							
 						$(document).ready(function(){
 						$('[data-toggle="tooltip"]').tooltip();
 						});
 						
+						//Get the button
+						let mybutton = document.getElementById("backtoTop");
+						// When the user scrolls down 20px from the top of the document, show the button
+						window.onscroll = function() {scrollFunction()};
+						function scrollFunction() {
+						if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+						mybutton.style.display = "block";
+						} else {
+						mybutton.style.display = "none";
+						}
+						}
+						//When the user clicks on the button, scroll to the top of the document
+						function topFunction() {
+						document.body.scrollTop = 10;
+						document.documentElement.scrollTop = 0;
+						}
+
+
+						let $animation_elements = $('.anim');
+						let $window = $(window);
+						function check_if_in_view() {
+						let window_height = $window.height();
+						let window_top_position = $window.scrollTop();
+						let window_bottom_position = (window_top_position + window_height);
+						
+						$.each($animation_elements, function() {
+						let $element = $(this);
+						let element_height = $element.outerHeight();
+						let element_top_position = $element.offset().top;
+						let element_bottom_position = (element_top_position + element_height);
+						
+						//check to see if this current container is within viewport
+						if ((element_bottom_position >= window_top_position) &&
+						(element_top_position <= window_bottom_position)) {	  
+								$element.addClass('fadeLeft');
+						}  
+						});
+						}
+						$window.on('scroll resize', check_if_in_view);
+						$window.trigger('scroll');
+ 
 						</script>
 					</body>
 				</html>
